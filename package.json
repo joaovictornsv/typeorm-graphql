@@ -1,0 +1,38 @@
+{
+   "name": "typescript-boilerplate-basic",
+   "version": "1.0.0",
+   "main": "index.js",
+   "license": "MIT",
+   "scripts": {
+      "dev": "tsnd --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+      "build": "rm -rf dist; tsc",
+      "lint": "eslint src/**/*.ts",
+      "start": "ts-node src/index.ts",
+      "refresh": "rm -rf node_modules package-lock.json && yarn install",
+      "test": "mocha -r ts-node/register __tests__/**/*.spec.ts",
+      "test:coverage": "nyc yarn test",
+      "typeorm": "tsnd node_modules/typeorm/cli.js"
+   },
+   "dependencies": {
+      "apollo-server": "^3.1.2",
+      "dotenv": "^10.0.0",
+      "graphql": "^15.5.1",
+      "pg": "^8.7.1",
+      "reflect-metadata": "^0.1.10",
+      "typeorm": "0.2.37",
+      "uuid": "^8.3.2"
+   },
+   "devDependencies": {
+      "@types/node": "^8.0.29",
+      "@types/uuid": "^8.3.1",
+      "@typescript-eslint/eslint-plugin": "^4.28.5",
+      "@typescript-eslint/parser": "^4.28.5",
+      "eslint": "^7.31.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-import-resolver-typescript": "^2.4.0",
+      "eslint-plugin-import": "^2.23.4",
+      "ts-node": "3.3.0",
+      "ts-node-dev": "^1.1.8",
+      "typescript": "3.3.3333"
+   }
+}
